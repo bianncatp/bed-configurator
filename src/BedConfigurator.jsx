@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Scene from './Scene';
 import './BedConfigurator.css';
+import MobileLoader from './MobileLoader';
 
 // Fabric Materials Configuration
 const FABRIC_MATERIALS = {
@@ -113,6 +114,7 @@ export default function BedConfigurator() {
   const [cameraView, setCameraView] = useState('default');
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [showBedroom, setShowBedroom] = useState(false);
   const [cadruTextures, setCadruTextures] = useState(null);
   const [capatTextures, setCapatTextures] = useState(null);
@@ -238,6 +240,10 @@ export default function BedConfigurator() {
   const currentMaterialConfig = FABRIC_MATERIALS[currentComponent.materialType];
 
   return (
+   <>
+   {isLoading &&  (
+      <MobileLoader onComplete={() => setIsLoading(false)} />
+    )}
     <div className="bed-configurator">
       {/* Left Panel */}
       <div className="configurator-panel">
@@ -461,5 +467,6 @@ export default function BedConfigurator() {
       </div>
       
     </div>
+    </>
   );
 }

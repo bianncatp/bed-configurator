@@ -1113,18 +1113,18 @@ body {
   }
   
   /* Make environment toggle minimal and elegant */
-  .environment-toggle {
+  /* .environment-toggle {
     bottom: 20px;
     right: 20px;
     padding: 6px;
     gap: 4px;
     background: rgba(253, 252, 250, 0.85);
     backdrop-filter: blur(8px);
-  }
+  } */
   
-  .environment-toggle-label {
-    display: none; /* Hide label */
-  }
+  /* .environment-toggle-label {
+    display: none; 
+  } */
   
   .environment-option {
     padding: 8px 10px;
@@ -1299,14 +1299,7 @@ body {
     display: none !important;
   }
   
-  /* Minimal icon-only environment toggle */
-  .environment-toggle {
-    bottom: 16px;
-    right: 16px;
-    padding: 4px;
-    gap: 2px;
-    border-radius: 20px;
-  }
+
   
   .environment-option {
     padding: 8px;
@@ -1442,13 +1435,7 @@ body {
     font-size: 10px;
   }
   
-  /* Super minimal toggle - pill style */
-  .environment-toggle {
-    bottom: 12px;
-    right: 12px;
-    padding: 3px;
-    border-radius: 20px;
-  }
+
   
   .environment-option {
     padding: 6px;
@@ -1492,11 +1479,7 @@ body {
     display: none !important;
   }
   
-  /* Environment toggle - bottom right */
-  .environment-toggle {
-    bottom: 16px;
-    right: 16px;
-  }
+
   
   /* Component labels - top right */
   .component-labels {
@@ -1536,61 +1519,9 @@ body {
     -webkit-overflow-scrolling: touch;
   }
 }
-
-/* ============================================
-   ALTERNATIVE: SWITCH TOGGLE STYLE
-   Uncomment this section if you prefer a switch instead of icons
-   ============================================ */
-/*
 @media (max-width: 1024px) {
   .environment-toggle {
-    padding: 4px;
-    background: rgba(253, 252, 250, 0.9);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 0;
-  }
-  
-  .environment-toggle-label {
-    display: none;
-  }
-  
-  .environment-option {
-    display: none;
-  }
-  
-  .environment-toggle::after {
-    content: '';
-    width: 48px;
-    height: 24px;
-    background: #e0e0e0;
-    border-radius: 12px;
-    position: relative;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .environment-toggle.bedroom::after {
-    background: #0A0A0A;
-  }
-  
-  .environment-toggle::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    top: 6px;
-    left: 6px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    z-index: 2;
-  }
-  
-  .environment-toggle.bedroom::before {
-    transform: translateX(24px);
+    display: none !important;
   }
 }
-*/
+

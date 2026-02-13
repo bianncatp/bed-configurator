@@ -1,0 +1,146 @@
+/* ============================================
+   MOBILE LOADER STYLES
+   ============================================ */
+
+.mobile-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #FDFCFA 0%, #F5F1EB 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-loader-content {
+  text-align: center;
+  padding: 40px;
+  max-width: 90%;
+}
+
+/* Brand Section */
+.loader-brand {
+  margin-bottom: 60px;
+}
+
+.loader-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: #0A0A0A;
+  margin-bottom: 16px;
+}
+
+.loader-divider {
+  width: 60px;
+  height: 1px;
+  background-color: #B8A88A;
+  margin: 0 auto 16px;
+}
+
+.loader-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: #6B6456;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Progress Bar */
+.loader-progress-container {
+  margin-bottom: 24px;
+}
+
+.loader-progress-bar {
+  width: 100%;
+  max-width: 300px;
+  height: 2px;
+  background-color: #E5DED3;
+  margin: 0 auto 12px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #B8A88A 0%, #0A0A0A 100%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.loader-progress-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: #8B7D6B;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* Loading Message */
+.loader-message {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: #6B6456;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-top: 32px;
+  min-height: 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Fade out animation */
+.mobile-loader-overlay.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .loader-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+  
+  .loader-subtitle {
+    font-size: 12px;
+  }
+  
+  .loader-progress-bar {
+    max-width: 250px;
+  }
+  
+  .loader-message {
+    font-size: 12px;
+  }
+}

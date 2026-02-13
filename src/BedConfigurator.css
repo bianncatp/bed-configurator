@@ -1,0 +1,1596 @@
+/* ============================================
+   BED ATELIER - LUXURY CONFIGURATOR STYLES
+   Premium minimalist design with beige/white/black palette
+   ============================================ */
+
+/* Import Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500&display=swap');
+
+/* ============================================
+   CSS VARIABLES - COLOR PALETTE
+   ============================================ */
+:root {
+  /* Primary Colors */
+  --color-primary-bg: #E5DED3;
+  --color-panel-bg: #FDFCFA;
+  --color-accent-bg: #F5F1EB;
+  --color-black: #0A0A0A;
+  --color-black-soft: #1C1C1C;
+  
+  /* Accent Colors */
+  --color-gold: #B8A88A;
+  --color-champagne: #D4AF37;
+  
+  /* Border Colors */
+  --color-border: #E5DED3;
+  --color-border-soft: rgba(229, 222, 211, 0.6);
+  
+  /* Text Colors */
+  --color-text-primary: #0A0A0A;
+  --color-text-secondary: #6B6456;
+  --color-text-tertiary: #8B7D6B;
+  --color-text-light: #F5F1EB;
+  
+  /* Shadows */
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-panel: 4px 0 24px rgba(0, 0, 0, 0.04);
+  
+  /* Typography */
+  --font-primary: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-secondary: 'Cormorant Garamond', serif;
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 56px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+.bed-configurator {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: var(--color-primary-bg);
+  color: var(--color-text-primary);
+  overflow: hidden;
+}
+
+/* ============================================
+   LEFT PANEL - CONFIGURATION
+   ============================================ */
+.configurator-panel {
+  width: 420px;
+  height: 100%;
+  background-color: var(--color-panel-bg);
+  border-right: 1px solid var(--color-border);
+  overflow-y: auto;
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+  box-shadow: var(--shadow-panel);
+}
+
+/* Custom Scrollbar */
+.configurator-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.configurator-panel::-webkit-scrollbar-track {
+  background: var(--color-accent-bg);
+}
+
+.configurator-panel::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+
+.configurator-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--color-champagne);
+}
+
+/* ============================================
+   PANEL HEADER / BRANDING
+   ============================================ */
+.panel-header {
+  margin-bottom: 48px;
+}
+
+.brand-title {
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  color: var(--color-black);
+}
+
+.brand-divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin-bottom: 16px;
+}
+
+.brand-subtitle {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+  margin-bottom: 56px;
+}
+
+.section-label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin-bottom: 24px;
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-border), transparent);
+  margin-bottom: 56px;
+}
+
+/* ============================================
+   BED PRESET CARDS
+   ============================================ */
+.preset-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.preset-card {
+  padding: 20px 24px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-panel-bg);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-smooth);
+  font-family: var(--font-secondary);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.preset-card:hover {
+  border-color: var(--color-gold);
+  background-color: var(--color-accent-bg);
+  transform: translateX(6px);
+  box-shadow: var(--shadow-medium);
+}
+
+.preset-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  color: var(--color-black);
+  letter-spacing: 1px;
+}
+
+.preset-description {
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+.preset-arrow {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--color-gold);
+  opacity: 0.4;
+  transition: opacity var(--transition-medium);
+}
+
+.preset-card:hover .preset-arrow {
+  opacity: 1;
+}
+
+/* ============================================
+   COMPONENT SELECTOR
+   ============================================ */
+.component-selector {
+  display: flex;
+  gap: 16px;
+}
+
+.component-button {
+  flex: 1;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-panel-bg);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: var(--font-secondary);
+  transition: all var(--transition-medium);
+  border-radius: 0;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+
+.component-button:hover {
+  border-color: var(--color-gold);
+}
+
+.component-button.active {
+  border: 2px solid var(--color-black);
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+}
+
+/* ============================================
+   MATERIAL CARDS
+   ============================================ */
+.material-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.material-card {
+  padding: 24px 20px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-panel-bg);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  font-family: var(--font-secondary);
+  border-radius: 0;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.material-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.material-card.active {
+  border: 2px solid var(--color-black);
+  background-color: var(--color-accent-bg);
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-4px);
+}
+
+.material-name {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  color: var(--color-black);
+  letter-spacing: 0.5px;
+}
+
+.material-price {
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+.material-indicator {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+}
+
+/* ============================================
+   HEADBOARD SELECTOR
+   ============================================ */
+.headboard-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.headboard-card {
+  padding: 16px 20px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-panel-bg);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  font-family: var(--font-secondary);
+  border-radius: 0;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headboard-card:hover {
+  border-color: var(--color-gold);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.headboard-card.active {
+  border: 2px solid var(--color-black);
+  background-color: var(--color-accent-bg);
+  box-shadow: var(--shadow-strong);
+}
+
+.headboard-number {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-bg);
+  border: 1px solid var(--color-border);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.headboard-card.active .headboard-number {
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+  border-color: var(--color-black);
+}
+
+.headboard-info {
+  flex: 1;
+}
+
+.headboard-label {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-black);
+  margin-bottom: 4px;
+  letter-spacing: 0.3px;
+}
+
+.headboard-description {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+/* ============================================
+   COLOR SWATCHES
+   ============================================ */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.color-swatch {
+  aspect-ratio: 1;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-medium);
+  border-radius: 0;
+  box-shadow: var(--shadow-soft);
+}
+
+.color-swatch:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-medium);
+}
+
+.color-swatch.active {
+  border: 3px solid var(--color-black);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   FABRIC COLOR SWATCHES (Monaco Style)
+   ============================================ */
+.fabric-color-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.fabric-swatch {
+  cursor: pointer;
+  border: 2px solid var(--color-border);
+  background-color: var(--color-panel-bg);
+  transition: all var(--transition-smooth);
+  overflow: hidden;
+  position: relative;
+}
+
+.fabric-swatch:hover {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+.fabric-swatch.active {
+  border: 3px solid var(--color-black);
+  box-shadow: var(--shadow-strong);
+}
+
+.fabric-swatch.active::after {
+  content: '✓';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.fabric-preview {
+  width: 100%;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fabric-name {
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  text-align: center;
+  background-color: var(--color-panel-bg);
+  letter-spacing: 0.3px;
+}
+
+/* ============================================
+   DIMENSION CONTROLS
+   ============================================ */
+.dimension-presets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.dimension-preset {
+  padding: 16px 14px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-panel-bg);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 300;
+  transition: all var(--transition-medium);
+  font-family: var(--font-secondary);
+  border-radius: 0;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.dimension-preset:hover {
+  background-color: var(--color-accent-bg);
+  border-color: var(--color-gold);
+}
+
+.dimension-preset.active {
+  border: 2px solid var(--color-black);
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+/* Custom Dimensions */
+.dimension-custom {
+  padding: 24px;
+  background-color: var(--color-accent-bg);
+  border-radius: 0;
+  border: 1px solid var(--color-border);
+}
+
+.custom-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+
+.dimension-control {
+  margin-bottom: 24px;
+}
+
+.dimension-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-family: var(--font-secondary);
+}
+
+.dimension-name {
+  text-transform: capitalize;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.3px;
+  font-weight: 300;
+}
+
+.dimension-value {
+  font-weight: 400;
+  color: var(--color-black);
+  letter-spacing: 0.5px;
+}
+
+.dimension-slider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-gold), var(--color-border));
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dimension-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--color-black);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all var(--transition-medium);
+}
+
+.dimension-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: var(--color-gold);
+}
+
+.dimension-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--color-black);
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  transition: all var(--transition-medium);
+}
+
+.dimension-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background: var(--color-gold);
+}
+
+/* ============================================
+   PRICE DISPLAY
+   ============================================ */
+.price-display {
+  padding: 32px;
+  background-color: var(--color-black);
+  margin-bottom: 32px;
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.price-amount {
+  font-size: 38px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--color-text-light);
+}
+
+/* ============================================
+   ACTION BUTTONS
+   ============================================ */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.action-button {
+  padding: 18px;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  transition: all var(--transition-medium);
+  font-family: var(--font-primary);
+  border-radius: 0;
+  font-weight: 500;
+  border: none;
+}
+
+.action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.action-button.secondary {
+  background-color: var(--color-panel-bg);
+  border: 1px solid var(--color-black);
+  color: var(--color-black);
+}
+
+.action-button.secondary:hover:not(:disabled) {
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+}
+
+.action-button.primary {
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.action-button.primary:hover:not(:disabled) {
+  background-color: var(--color-black-soft);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   RIGHT PANEL - 3D VIEWER
+   ============================================ */
+.viewer-panel {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(to bottom, #ffffff 0%, #e2e2e2 50%, #E5DED3 100%);
+  box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.15);
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================
+   CAMERA CONTROLS
+   ============================================ */
+.camera-controls {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+   pointer-events: auto !important;
+  z-index: 999 !important;
+}
+
+.camera-panel {
+  background-color: rgba(253, 252, 250, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 0;
+  padding: 12px;
+  box-shadow: var(--shadow-strong);
+  border: 1px solid var(--color-border-soft);
+}
+
+.camera-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-tertiary);
+  margin-bottom: 12px;
+  padding-left: 12px;
+  font-family: var(--font-secondary);
+  font-weight: 500;
+}
+
+.camera-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all var(--transition-medium);
+  font-family: var(--font-secondary);
+  border-radius: 0;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+   pointer-events: auto !important;
+  z-index: 999 !important;
+}
+
+.camera-button:hover {
+  background-color: rgba(184, 168, 138, 0.15);
+}
+
+.camera-button.active {
+  background-color: var(--color-black);
+  color: var(--color-text-light);
+}
+
+.camera-icon {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* ============================================
+   COMPONENT LABELS (Bottom Right)
+   ============================================ */
+.component-labels {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  gap: 16px;
+}
+
+.component-label {
+  padding: 14px 28px;
+  background-color: rgba(253, 252, 250, 0.95);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-soft);
+  cursor: pointer;
+  font-size: 12px;
+  transition: all var(--transition-medium);
+  font-family: var(--font-secondary);
+  letter-spacing: 1.5px;
+  box-shadow: var(--shadow-medium);
+  border-radius: 0;
+  backdrop-filter: blur(12px);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.component-label:hover {
+  background-color: rgba(184, 168, 138, 0.2);
+}
+
+.component-label.active {
+  background-color: rgba(10, 10, 10, 0.95);
+  color: var(--color-text-light);
+  border: 1px solid var(--color-black);
+}
+
+/* ============================================
+   WATERMARK
+   ============================================ */
+.watermark {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  font-size: 11px;
+  color: rgba(107, 100, 86, 0.5);
+  letter-spacing: 3px;
+  font-family: var(--font-secondary);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1400px) {
+  .configurator-panel {
+    width: 380px;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+  
+  .brand-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .configurator-panel {
+    width: 340px;
+  }
+  
+  .material-grid,
+  .color-grid {
+    gap: 12px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .bed-configurator {
+    display: block;
+  }
+  
+  .configurator-panel {
+    width: 100%;
+    border: none;
+  }
+  
+  .viewer-panel {
+    display: none;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.action-button:focus,
+.component-button:focus,
+.camera-button:focus,
+.preset-card:focus,
+.material-card:focus,
+.dimension-preset:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Environment Toggle Button */
+.environment-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.environment-toggle-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #999;
+  align-self: center;
+  margin-right: 8px;
+}
+
+.environment-option {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.environment-option:hover {
+  background: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.environment-option.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.environment-icon {
+  font-size: 16px;
+}
+
+/* Alternative Vertical Style */
+.environment-toggle.vertical {
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 12px;
+}
+
+.environment-toggle.vertical .environment-toggle-label {
+  margin-right: 0;
+  margin-bottom: 4px;
+}
+
+/* Compact Toggle Switch Style */
+.environment-switch {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.environment-switch-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-switch.active {
+  background: #000;
+}
+
+.toggle-switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.active .toggle-switch-handle {
+  transform: translateX(20px);
+}
+/* Environment Toggle - Add to BedConfigurator.css */
+
+.environment-toggle {
+  position: absolute;
+  bottom: 100px;
+  right: 40px;
+  z-index: 10;
+  display: flex;
+  gap: 12px;
+  background: rgba(253, 252, 250, 0.95);
+  padding: 12px 16px;
+  border-radius: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 222, 211, 0.6);
+}
+
+.environment-toggle-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8B7D6B;
+  align-self: center;
+  margin-right: 8px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.environment-option {
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid #E5DED3;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B6456;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.5px;
+  border-radius: 0;
+}
+
+.environment-option:hover {
+  background: #F5F1EB;
+  border-color: #B8A88A;
+}
+
+.environment-option.active {
+  background: #0A0A0A;
+  color: #F5F1EB;
+  border-color: #0A0A0A;
+}
+
+.environment-icon {
+  font-size: 14px;
+}
+
+/* ============================================
+   IMPROVED MOBILE RESPONSIVE STYLES
+   Better controls and toggle design
+   Replace the previous mobile CSS with this
+   ============================================ */
+
+/* ============================================
+   TABLET (1024px and below)
+   ============================================ */
+@media (max-width: 1024px) {
+  .bed-configurator {
+    flex-direction: column;
+  }
+  
+  .configurator-panel {
+    width: 100%;
+    height: 50vh;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+  }
+  
+  .viewer-panel {
+    height: 50vh;
+  }
+  
+  /* Smaller brand title */
+  .brand-title {
+    font-size: 32px;
+  }
+  
+  /* Adjust sections */
+  .section {
+    margin-bottom: 32px;
+  }
+  
+  /* HIDE camera controls on tablet/mobile */
+  .camera-controls {
+    display: none;
+  }
+  
+  /* Make environment toggle minimal and elegant */
+  .environment-toggle {
+    bottom: 20px;
+    right: 20px;
+    padding: 6px;
+    gap: 4px;
+    background: rgba(253, 252, 250, 0.85);
+    backdrop-filter: blur(8px);
+  }
+  
+  .environment-toggle-label {
+    display: none; /* Hide label */
+  }
+  
+  .environment-option {
+    padding: 8px 10px;
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    min-width: 40px;
+    justify-content: center;
+  }
+  
+  .environment-option:hover {
+    background: rgba(184, 168, 138, 0.1);
+  }
+  
+  .environment-option.active {
+    background: #0A0A0A;
+  }
+  
+  .environment-icon {
+    font-size: 18px;
+  }
+  
+  .environment-option span:last-child {
+    display: none; /* Hide text, show only icons */
+  }
+  
+  /* Component labels - smaller */
+  .component-labels {
+    gap: 8px;
+  }
+  
+  .component-label {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+}
+
+/* ============================================
+   MOBILE (768px and below)
+   ============================================ */
+@media (max-width: 768px) {
+  .configurator-panel {
+    padding: var(--spacing-md);
+    height: 60vh;
+  }
+  
+  .viewer-panel {
+    height: 40vh;
+  }
+  
+  /* Panel header */
+  .panel-header {
+    margin-bottom: 24px;
+  }
+  
+  .brand-title {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+  
+  .brand-subtitle {
+    font-size: 13px;
+  }
+  
+  /* Section labels */
+  .section-label {
+    font-size: 9px;
+    margin-bottom: 16px;
+  }
+  
+  /* Sections */
+  .section {
+    margin-bottom: 24px;
+  }
+  
+  /* Component selector - Stack vertically */
+  .component-selector {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .component-button {
+    padding: 14px;
+    font-size: 13px;
+  }
+  
+  /* Material grid - 1 column */
+  .material-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Headboard selector */
+  .headboard-selector {
+    gap: 10px;
+  }
+  
+  .headboard-card {
+    padding: 12px 16px;
+  }
+  
+  .headboard-number {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .headboard-label {
+    font-size: 14px;
+  }
+  
+  .headboard-description {
+    font-size: 11px;
+  }
+  
+  /* Fabric color grid */
+  .fabric-color-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .fabric-preview {
+    height: 100px;
+  }
+  
+  .fabric-name {
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  /* Dimension presets */
+  .dimension-presets {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .dimension-preset {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+  
+  /* Custom dimensions */
+  .dimension-custom {
+    padding: 16px;
+  }
+  
+  .dimension-control {
+    margin-bottom: 16px;
+  }
+  
+  /* Price display */
+  .price-display {
+    padding: 24px 20px;
+    margin-bottom: 24px;
+  }
+  
+  .price-amount {
+    font-size: 32px;
+  }
+  
+  /* Action buttons */
+  .action-buttons {
+    gap: 12px;
+  }
+  
+  .action-button {
+    padding: 16px;
+    font-size: 11px;
+  }
+  
+  /* HIDE camera controls completely */
+  .camera-controls {
+    display: none !important;
+  }
+  
+  /* Minimal icon-only environment toggle */
+  .environment-toggle {
+    bottom: 16px;
+    right: 16px;
+    padding: 4px;
+    gap: 2px;
+    border-radius: 20px;
+  }
+  
+  .environment-option {
+    padding: 8px;
+    min-width: 36px;
+    border-radius: 18px;
+  }
+  
+  .environment-icon {
+    font-size: 16px;
+  }
+  
+  /* Component labels - Compact */
+  .component-labels {
+    top: 16px;
+    bottom: auto;
+    right: 16px;
+    gap: 6px;
+  }
+  
+  .component-label {
+    padding: 8px 14px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  
+  /* Watermark - smaller */
+  .watermark {
+    font-size: 8px;
+    left: 16px;
+    bottom: 16px;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (480px and below)
+   ============================================ */
+@media (max-width: 480px) {
+  .configurator-panel {
+    padding: var(--spacing-sm);
+    height: 65vh;
+  }
+  
+  .viewer-panel {
+    height: 35vh;
+  }
+  
+  /* Panel header */
+  .brand-title {
+    font-size: 24px;
+  }
+  
+  .brand-subtitle {
+    font-size: 12px;
+  }
+  
+  /* Sections */
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  /* Material cards */
+  .material-card {
+    padding: 16px 14px;
+  }
+  
+  .material-name {
+    font-size: 16px;
+  }
+  
+  .material-price {
+    font-size: 12px;
+  }
+  
+  /* Headboard cards */
+  .headboard-card {
+    padding: 10px 12px;
+  }
+  
+  .headboard-number {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+  
+  .headboard-label {
+    font-size: 13px;
+  }
+  
+  .headboard-description {
+    font-size: 10px;
+  }
+  
+  /* Fabric swatches */
+  .fabric-color-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .fabric-preview {
+    height: 80px;
+  }
+  
+  .fabric-name {
+    padding: 8px;
+    font-size: 11px;
+  }
+  
+  /* Dimension presets - Stack */
+  .dimension-presets {
+    grid-template-columns: 1fr;
+  }
+  
+  .dimension-preset {
+    padding: 14px;
+  }
+  
+  /* Price display */
+  .price-display {
+    padding: 20px 16px;
+  }
+  
+  .price-label {
+    font-size: 9px;
+  }
+  
+  .price-amount {
+    font-size: 28px;
+  }
+  
+  /* Action buttons */
+  .action-button {
+    padding: 14px;
+    font-size: 10px;
+  }
+  
+  /* Super minimal toggle - pill style */
+  .environment-toggle {
+    bottom: 12px;
+    right: 12px;
+    padding: 3px;
+    border-radius: 20px;
+  }
+  
+  .environment-option {
+    padding: 6px;
+    min-width: 32px;
+    border-radius: 16px;
+  }
+  
+  .environment-icon {
+    font-size: 14px;
+  }
+  
+  /* Component labels */
+  .component-label {
+    padding: 6px 12px;
+    font-size: 8px;
+  }
+}
+
+/* ============================================
+   LANDSCAPE MODE (Mobile Landscape)
+   ============================================ */
+@media (max-width: 896px) and (orientation: landscape) {
+  .bed-configurator {
+    flex-direction: row;
+  }
+  
+  .configurator-panel {
+    width: 40%;
+    height: 100vh;
+    border-right: 1px solid var(--color-border);
+    border-bottom: none;
+  }
+  
+  .viewer-panel {
+    width: 60%;
+    height: 100vh;
+  }
+  
+  /* Keep camera controls hidden in landscape too */
+  .camera-controls {
+    display: none !important;
+  }
+  
+  /* Environment toggle - bottom right */
+  .environment-toggle {
+    bottom: 16px;
+    right: 16px;
+  }
+  
+  /* Component labels - top right */
+  .component-labels {
+    top: 16px;
+    bottom: auto;
+    right: 16px;
+  }
+}
+
+/* ============================================
+   TOUCH OPTIMIZATION
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  .component-button,
+  .material-card,
+  .headboard-card,
+  .fabric-swatch,
+  .dimension-preset,
+  .environment-option,
+  .component-label {
+    min-height: 44px;
+  }
+  
+  /* Remove hover effects on touch */
+  .component-button:hover,
+  .material-card:hover,
+  .headboard-card:hover,
+  .fabric-swatch:hover,
+  .preset-card:hover,
+  .environment-option:hover {
+    transform: none;
+  }
+  
+  /* Better touch scrolling */
+  .configurator-panel {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ============================================
+   ALTERNATIVE: SWITCH TOGGLE STYLE
+   Uncomment this section if you prefer a switch instead of icons
+   ============================================ */
+/*
+@media (max-width: 1024px) {
+  .environment-toggle {
+    padding: 4px;
+    background: rgba(253, 252, 250, 0.9);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .environment-toggle-label {
+    display: none;
+  }
+  
+  .environment-option {
+    display: none;
+  }
+  
+  .environment-toggle::after {
+    content: '';
+    width: 48px;
+    height: 24px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .environment-toggle.bedroom::after {
+    background: #0A0A0A;
+  }
+  
+  .environment-toggle::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 6px;
+    left: 6px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 2;
+  }
+  
+  .environment-toggle.bedroom::before {
+    transform: translateX(24px);
+  }
+}
+*/
